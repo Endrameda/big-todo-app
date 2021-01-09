@@ -1,0 +1,66 @@
+@import "src/styles/system/vars";
+
+.list {
+    margin-bottom: 30px;
+
+    li {
+        display: flex;
+        align-items: center;
+        padding: 10px 12px;
+        cursor: pointer;
+        transition: 0.2s;
+        margin-bottom: 5px;
+
+        &.active {
+            background: $white;
+            box-shadow: 0 2px 5px rgba($black, 0.05);
+            border-radius: 4px;
+        }
+
+        > i {
+            margin-right: 8px;
+            font-size: 0;
+            display: flex;
+            width: 18px;
+            height: 18px;
+            align-items: center;
+            justify-content: center;
+
+            img {
+                opacity: 0.6;
+            }
+        }
+
+        .badge {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+
+            &--green {
+                background-color: #42b883;
+            }
+
+            &--light-green {
+                background-color: #b6e6bd;
+            }
+
+            &--blue {
+                background-color: #64c4ed;
+            }
+
+            &--pink {
+                background-color: #ffbbcc;
+            }
+
+            &--gray {
+                background-color: #c9d1d3;
+            }
+        }
+
+        span {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+    }
+}
