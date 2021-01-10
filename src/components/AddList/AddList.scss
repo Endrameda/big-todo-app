@@ -1,0 +1,42 @@
+@import "src/styles/system/vars";
+
+.add-list {
+    position: relative;
+
+    &__popup {
+        padding: 18px;
+        background: $white;
+        box-shadow: 0 6px 10px rgba($black, 0.05);
+        border-radius: 10px;
+        position: absolute;
+        width: 240px;
+        left: 5px;
+        top: calc(100% + 10px);
+    }
+
+    &__colors {
+        margin-top: 15px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .badge {
+        width: 20px;
+        height: 20px;
+        border: 2px solid transparent;
+        margin-right: 5px;
+        margin-bottom: 5px;
+
+        &.active {
+            border: 2px solid #525252;
+        }
+    }
+
+    &__close-popup {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        cursor: pointer;
+    }
+}

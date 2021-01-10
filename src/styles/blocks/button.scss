@@ -1,0 +1,45 @@
+@import "src/styles/system/vars";
+
+.button {
+    background: $greenButtonBg;
+    border-radius: 4px;
+    padding: 10px 20px;
+    color: $white;
+    box-shadow: none;
+    border: 1px solid $greenButtonBg;
+    transition: 0.2s;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+
+    &:hover, &:active {
+        background-color: darken($greenButtonBg, 10%);
+    }
+
+    &:active {
+        transform: scale(0.98);
+    }
+
+    &--gray {
+        color: $grayButtonColor;
+        background-color: $grayButtonBg;
+        border-color: $grayButtonBg;
+
+        &:hover, &:active {
+            background-color: darken($grayButtonBg, 5%);
+        }
+    }
+
+    &--100 {
+        width: 100%;
+    }
+
+    &--mt15 {
+        margin-top: 15px;
+    }
+
+    &--mt10 {
+        margin-top: 10px;
+    }
+}

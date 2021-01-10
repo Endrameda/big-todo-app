@@ -1,6 +1,12 @@
 @import "styles/system/default";
 @import "styles/system/vars";
 
+// blocks
+@import "styles/blocks/button";
+@import "styles/blocks/field";
+
+// todo styles
+
 .todo {
     position: absolute;
     top: 50%;
@@ -11,7 +17,6 @@
     box-shadow: 2px 2px 11px -4px #c4c4c4;
     border-radius: 10px;
     border: 1px solid $todoBorderColor;
-    overflow: hidden;
     font-size: 14px;
 
     &__sidebar {
@@ -20,5 +25,7 @@
         width: 200px;
         height: 100%;
         border-right: 1px solid $todoBorderColor;
+        border-radius: 10px 0 0 10px;
     }
 }
+

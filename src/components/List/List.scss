@@ -10,11 +10,15 @@
         cursor: pointer;
         transition: 0.2s;
         margin-bottom: 5px;
+        border-radius: 4px;
+
+        &:hover {
+            background-color: rgba($white, 0.6);
+        }
 
         &.active {
             background: $white;
             box-shadow: 0 2px 5px rgba($black, 0.05);
-            border-radius: 4px;
         }
 
         > i {
@@ -31,36 +35,36 @@
             }
         }
 
-        .badge {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-
-            &--green {
-                background-color: #42b883;
-            }
-
-            &--light-green {
-                background-color: #b6e6bd;
-            }
-
-            &--blue {
-                background-color: #64c4ed;
-            }
-
-            &--pink {
-                background-color: #ffbbcc;
-            }
-
-            &--gray {
-                background-color: #c9d1d3;
-            }
-        }
-
         span {
             white-space: nowrap;
             text-overflow: ellipsis;
             overflow: hidden;
+        }
+    }
+
+    &__add-button {
+        svg {
+            path {
+                stroke: $gray;
+                transition: 0.2s;
+            }
+        }
+
+        span {
+            color: $gray;
+            transition: 0.2s;
+        }
+
+        &:hover {
+            svg {
+                path {
+                    stroke: $black;
+                }
+            }
+
+            span {
+                color: $black;
+            }
         }
     }
 }
