@@ -1,3 +1,7 @@
+Чтобы запустить проект вам нужно глобально установить пакет json-server и запустить 
+### `npm start`
+### `npm json-server`
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

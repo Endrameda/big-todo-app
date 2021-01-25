@@ -1,7 +1,14 @@
 @import "src/styles/system/vars";
 
 .list {
+    $self: &;
     margin-bottom: 30px;
+
+    &__delete-icon {
+        margin-left: auto;
+        opacity: 0;
+        transition: 0.2s;
+    }
 
     li {
         display: flex;
@@ -14,6 +21,10 @@
 
         &:hover {
             background-color: rgba($white, 0.6);
+
+            #{$self}__delete-icon {
+                opacity: 1;
+            }
         }
 
         &.active {
@@ -25,7 +36,7 @@
             margin-right: 8px;
             font-size: 0;
             display: flex;
-            width: 18px;
+            min-width: 18px;
             height: 18px;
             align-items: center;
             justify-content: center;

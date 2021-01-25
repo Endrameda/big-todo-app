@@ -1,45 +1,54 @@
 @import "src/styles/system/vars";
 
 .button {
-    background: $greenButtonBg;
-    border-radius: 4px;
-    padding: 10px 20px;
-    color: $white;
-    box-shadow: none;
-    border: 1px solid $greenButtonBg;
-    transition: 0.2s;
-    cursor: pointer;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 17px;
+  background: $greenButtonBg;
+  border-radius: 4px;
+  padding: 10px 20px;
+  color: $white;
+  box-shadow: none;
+  border: 1px solid $greenButtonBg;
+  transition: 0.2s;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+
+  &:hover, &:active {
+    background-color: darken($greenButtonBg, 10%);
+  }
+
+  &:disabled {
+    background-color: #a8a8a8;
+    border-color: #a8a8a8;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &--grey {
+    color: $grayButtonColor;
+    background-color: $grayButtonBg;
+    border-color: $grayButtonBg;
 
     &:hover, &:active {
-        background-color: darken($greenButtonBg, 10%);
+      background-color: darken($grayButtonBg, 5%);
     }
+  }
 
-    &:active {
-        transform: scale(0.98);
-    }
+  &--100 {
+    width: 100%;
+  }
 
-    &--gray {
-        color: $grayButtonColor;
-        background-color: $grayButtonBg;
-        border-color: $grayButtonBg;
+  &--mt15 {
+    margin-top: 15px;
+  }
 
-        &:hover, &:active {
-            background-color: darken($grayButtonBg, 5%);
-        }
-    }
+  &--mt10 {
+    margin-top: 10px;
+  }
 
-    &--100 {
-        width: 100%;
-    }
-
-    &--mt15 {
-        margin-top: 15px;
-    }
-
-    &--mt10 {
-        margin-top: 10px;
-    }
+  &--mr10 {
+    margin-right: 10px;
+  }
 }

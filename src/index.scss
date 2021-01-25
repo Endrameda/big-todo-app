@@ -7,25 +7,39 @@
 
 // todo styles
 
+.todo-wrapper {
+    height: 100vh;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .todo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    margin: auto;
     width: 750px;
-    height: 530px;
-    transform: translate(-50%, -50%);
+    min-height: 540px;
     box-shadow: 2px 2px 11px -4px #c4c4c4;
     border-radius: 10px;
     border: 1px solid $todoBorderColor;
     font-size: 14px;
+    display: flex;
 
     &__sidebar {
         padding: 48px 20px;
         background: $sidebarBg;
         width: 200px;
-        height: 100%;
+        min-width: 200px;
         border-right: 1px solid $todoBorderColor;
         border-radius: 10px 0 0 10px;
     }
+
+    &__tasks {
+        padding: 55px;
+        flex: 1 1 auto;
+    }
 }
+
+
 

@@ -1,0 +1,157 @@
+@import "src/styles/system/vars";
+
+.tasks {
+    $self: &;
+
+    &__title {
+        font-family: Montserrat, sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 39px;
+        color: $blue;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #f2f2f2;
+        margin-bottom: 30px;
+    }
+
+    &__edit-icon {
+        display: inline-flex;
+        width: 20px;
+        height: 20px;
+        align-items: center;
+        justify-content: center;
+        margin-left: 15px;
+        cursor: pointer;
+
+        svg {
+
+            path {
+                transition: 0.2s;
+            }
+        }
+
+        &:hover {
+            svg {
+                path {
+                    fill: rgba($black, 0.7)
+                }
+            }
+        }
+    }
+
+    &__no-tasks {
+        font-family: Montserrat, sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 21px;
+        color: #C9D1D3;
+        text-align: center;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 18px;
+    }
+
+    &__label {
+        cursor: pointer;
+        margin-right: 14px;
+
+        input {
+            display: none;
+
+            &:checked + #{$self}__checkbox {
+                background-color: $checkboxActiveColor;
+                border-color: $checkboxActiveColor;
+
+                svg path {
+                    transition: 0.2s;
+                    stroke: $white;
+                }
+            }
+        }
+
+        &:hover {
+            #{$self}__checkbox {
+                border-color: $checkboxHoverColor;
+                background-color: $checkboxHoverColor;
+
+                svg path {
+                    transition: 0.2s;
+                    stroke: $checkboxIconHoverColor;
+                }
+            }
+        }
+    }
+
+    &__checkbox {
+        $checkbox: &;
+        display: inline-flex;
+        font-size: 0;
+        width: 20px;
+        height: 20px;
+        transition: 0.2s;
+        border: 2px solid $checkboxDefaultBorderColor;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+
+        svg path {
+            transition: 0.2s;
+            stroke: transparent;
+        }
+    }
+
+    &__text {
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    &__form {
+        margin-top: 20px;
+
+        &-new {
+            display: inline-flex;
+            align-items: center;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 19px;
+            font-family: Lato, sans-serif;
+            color: #b4b4b4;
+            transition: color 0.2s;
+            cursor: pointer;
+
+            &-icon {
+                margin-right: 20px;
+                min-width: 20px;
+                height: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            svg {
+                path {
+                    transition: fill 0.2s;
+                }
+            }
+
+            &:hover {
+                color: $black;
+
+                svg {
+                    path {
+                        fill: $black;
+                    }
+                }
+            }
+        }
+
+        &-row {
+            margin-bottom: 16px;
+        }
+    }
+}
