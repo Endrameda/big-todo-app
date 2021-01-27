@@ -26,10 +26,10 @@ const List = ({ items, isRemovable, onClick, onRemove, onClickItem, activeItem }
                            className={ classNames(item.className, {
                                active : item.active
                                    ? item.active
-                                   : activeItem && item.id === activeItem.id
+                                   : activeItem && activeItem.id === item.id
                            }) }
-                           title={ item.name }
                            onClick={ onClickItem ? () => onClickItem(item) : null }
+                           title={ item.name }
                 >
                     <i>{ item.icon
                         ? item.icon

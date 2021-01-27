@@ -4,8 +4,9 @@ import axios from 'axios';
 import './Tasks.scss'
 
 import AddTasksForm from "./AddTasksForm";
+import Task from "./Task";
 
-const Tasks = ({ list, onEditTitle, onAddTask }) => {
+const Tasks = ({ list, onEditTitle, onAddTask, withoutEmpty, onRemoveTasks, onTaskTextEdit }) => {
     const titleRef = useRef()
 
     const activeContentEditable = () => {
@@ -27,15 +28,13 @@ const Tasks = ({ list, onEditTitle, onAddTask }) => {
         onEditTitle(list.id, titleRef.current.innerText)
         axios.patch(`http://localhost:3001/lists/${ list.id }`, {
             name : newTitle
-        }).catch(() => {
-            alert('При попытке изменения названия листа задач произошла ошибка, пожалуйста повторите попытку!')
-        })
+        }).catch(() => alert('При попытке изменения названия листа задач произошла ошибка, пожалуйста повторите попытку!'))
         disableContentEditable()
     }
 
     return (
         <div className="tasks">
-            <h2 className="tasks__title">
+            <h2 className="tasks__title" style={ { color : list.color.hex } }>
                 <span ref={ titleRef } onBlur={ handleBlurTitle }>{ list.name }</span>
                 <span className="tasks__edit-icon" onClick={ handleEditTitle }>
 					<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -47,33 +46,16 @@ const Tasks = ({ list, onEditTitle, onAddTask }) => {
             </h2>
 
             <div className="tasks__list">
-                { !list.tasks.length && <h2 className={ 'tasks__no-tasks' }>Задачи отсутствуют</h2> }
-                {
-                    list.tasks.map(item => {
-                        return (
-                            <div key={ item.id } className="tasks__item">
-                                <div className="tasks__checkbox-wrap">
-                                    <label className="tasks__label">
-                                        <input type="checkbox"/>
-                                        <span className="tasks__checkbox">
-								<svg width="11" height="8" viewBox="0 0 11 8" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-									<path d="M9.29999 1.20001L3.79999 6.70001L1.29999 4.20001" stroke="#B3B3B3"
-                                          strokeWidth="1.5" strokeLinecap="round"
-                                          strokeLinejoin="round"/>
-								</svg>
-							</span>
-                                    </label>
-                                </div>
-                                <p className="tasks__text">
-                                    { item.text }
-                                </p>
-                            </div>
-                        )
-                    })
+                { withoutEmpty && !list.tasks.length && <h2 className={ 'tasks__no-tasks' }>Задачи отсутствуют</h2> }
+                { list.tasks &&
+                list.tasks.map(item => {
+                    return (
+                        <Task key={ item.id } { ...item } onRemove={ onRemoveTasks } onEditable={ onTaskTextEdit }/>
+                    )
+                })
                 }
             </div>
-            <AddTasksForm list={ list } onAddTask={ onAddTask }/>
+            <AddTasksForm key={ list.id } list={ list } onAddTask={ onAddTask }/>
         </div>
     );
 };

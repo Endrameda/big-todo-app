@@ -13,52 +13,16 @@
   ],
   "tasks": [
     {
-      "id": 4,
-      "listId": 6,
-      "text": "Redux (redux-observable, redux-saga)",
-      "completed": false
-    },
-    {
-      "listId": 6,
-      "text": "123",
-      "completed": true,
-      "id": 5
-    },
-    {
-      "listId": 6,
-      "text": "222",
-      "completed": true,
-      "id": 12
-    },
-    {
       "listId": 1,
-      "text": "123",
+      "text": "Закончить Bog Todo App 123 123",
       "completed": false,
       "id": 13
     },
     {
-      "listId": 1,
-      "text": "12 114e qads",
+      "listId": 6,
+      "text": "123 1as d ",
       "completed": false,
-      "id": 14
-    },
-    {
-      "listId": 1,
-      "text": "",
-      "completed": false,
-      "id": 15
-    },
-    {
-      "listId": 1,
-      "text": "123 123",
-      "completed": false,
-      "id": 16
-    },
-    {
-      "listId": 1,
-      "text": "123 ",
-      "completed": false,
-      "id": 17
+      "id": 21
     }
   ],
   "colors": [
