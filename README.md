@@ -1,6 +1,6 @@
 Чтобы запустить проект вам нужно глобально установить пакет json-server и запустить 
-### `npm start`
-### `npm json-server`
+комманду в конре проекта
+### `npm run json-server`
 
 # Getting Started with Create React App
 

@@ -9,6 +9,11 @@
       "name": "Спорт",
       "colorId": 3,
       "id": 6
+    },
+    {
+      "name": "qeqw eq",
+      "colorId": 4,
+      "id": 7
     }
   ],
   "tasks": [
@@ -23,6 +28,12 @@
       "text": "123 1as d ",
       "completed": false,
       "id": 21
+    },
+    {
+      "listId": 7,
+      "text": "qwe 12 12",
+      "completed": false,
+      "id": 22
     }
   ],
   "colors": [
